@@ -1,154 +1,108 @@
-<!-- FILE: index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Vintage Lane — Home</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#0f1724; /* deep navy */
-      --card:#0b1220;
-      --accent:#ffd166;
-      --muted:#98a0b3;
-      --glass: rgba(255,255,255,0.04);
-      --wire: #3b82f6;
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Thrift Store | Home</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Poppins, sans-serif;
+        background: linear-gradient(135deg, #111, #1b1b1b);
+        color: #fff;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:linear-gradient(180deg,var(--bg),#071025);color:#e6eef8;min-height:100vh}
-    a{color:inherit;text-decoration:none}
-    header{display:flex;align-items:center;justify-content:space-between;padding:20px 36px;background:linear-gradient(90deg,rgba(255,255,255,0.02),transparent);backdrop-filter:blur(6px);position:sticky;top:0;z-index:50}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ff7b7b);display:flex;align-items:center;justify-content:center;font-weight:700;color:#071025;font-family:'Playfair Display',serif}
-    nav{display:flex;gap:18px;align-items:center}
-    nav a{padding:8px 12px;border-radius:8px;font-weight:600;color:var(--muted)}
-    nav a:hover{color:var(--accent)}
-
-    .container{max-width:1200px;margin:36px auto;padding:0 20px}
-    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
-    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:32px;border-radius:20px;box-shadow:0 6px 30px rgba(2,6,23,0.6);}
-    .headline{font-family:'Playfair Display',serif;font-size:36px;line-height:1.02;margin:0 0 12px}
-    .sub{color:var(--muted);margin-bottom:18px}
-    .cta{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,var(--accent),#ff9a8a);color:#071025;font-weight:700}
-
-    /* wireframe product grid */
-    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:28px}
-    .wire-card{position:relative;padding:18px;border-radius:14px;background:var(--card);overflow:hidden}
-    /* wired frame: double border using :before and :after */
-    .wire-card:before, .wire-card:after{content:'';position:absolute;inset:12px;border-radius:10px;pointer-events:none}
-    .wire-card:before{border:2px dashed rgba(255,255,255,0.06);transform:rotate(-1.6deg);}
-    .wire-card:after{inset:6px;border:2px solid rgba(59,130,246,0.12);transform:rotate(1.2deg)}
-    .wire-inner{position:relative;z-index:2;display:flex;gap:14px;align-items:center}
-    .thumb{width:88px;height:88px;border-radius:10px;flex:0 0 88px;background-size:cover;background-position:center;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
-    .meta{flex:1}
-    .title{font-weight:700;margin:0 0 6px}
-    .price{color:var(--accent);font-weight:700}
-    .tag{display:inline-block;margin-top:8px;padding:6px 10px;border-radius:999px;background:var(--glass);color:var(--muted);font-size:13px}
-
-    footer{padding:28px 36px;margin-top:48px;color:var(--muted);text-align:center}
-
-    /* responsive */
-    @media (max-width:900px){
-      .hero{grid-template-columns:1fr}
-      .grid{grid-template-columns:1fr}
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 40px;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(255,255,255,0.1);
     }
-  </style>
+    nav a {
+        color: #fff;
+        margin-left: 20px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+    nav a:hover { color: #0ff; }
+
+    .hero {
+        text-align: center;
+        padding: 120px 20px;
+    }
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+    .hero p {
+        font-size: 1.2rem;
+        opacity: 0.8;
+    }
+    .btn-main {
+        margin-top: 25px;
+        padding: 12px 28px;
+        border: 2px solid #0ff;
+        border-radius: 8px;
+        background: transparent;
+        color: #0ff;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: 0.3s;
+    }
+    .btn-main:hover {
+        background: #0ff;
+        color: #000;
+    }
+
+    .cards {
+        margin: 80px auto;
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+    }
+    .card {
+        padding: 25px;
+        border: 2px dashed rgba(255,255,255,0.2);
+        border-radius: 14px;
+        text-align: center;
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(6px);
+        transition: 0.35s;
+    }
+    .card:hover {
+        border-color: #0ff;
+        transform: translateY(-6px);
+    }
+</style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-      <div class="logo">VL</div>
-      <div>
-        <div style="font-weight:700">Vintage Lane</div>
-        <div style="font-size:12px;color:var(--muted)">Curated pre-loved finds</div>
-      </div>
+
+<nav>
+    <h2>Thrift Store</h2>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Shop</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+</nav>
 
-  <main class="container">
-    <section class="hero">
-      <div class="hero-card">
-        <h1 class="headline">Sustainable style, reimagined.</h1>
-        <p class="sub">Handpicked vintage and thrifted pieces with personality — all carefully cleaned and photographed. New arrivals every week.</p>
-        <a class="cta" href="products.html">Browse Collection</a>
+<section class="hero">
+    <h1>Find Unique Preloved Treasures</h1>
+    <p>Curated thrift finds that are affordable, sustainable, and stylish.</p>
+    <a href="products.html"><button class="btn-main">Shop Now</button></a>
+</section>
 
-        <div class="grid">
-          <!-- four wire cards (preview) -->
-          <article class="wire-card">
-            <div class="wire-inner">
-              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1520975684303-1e4d2e7f4e43?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder');"></div>
-              <div class="meta">
-                <h3 class="title">Corduroy Jacket</h3>
-                <div class="price">₹1,499</div>
-                <div class="tag">Outerwear • Unisex</div>
-              </div>
-            </div>
-          </article>
+<section class="cards">
+    <div class="card">Trending Jackets</div>
+    <div class="card">Vintage Tees</div>
+    <div class="card">Minimal Accessories</div>
+    <div class="card">Sneaker Collection</div>
+</section>
 
-          <article class="wire-card">
-            <div class="wire-inner">
-              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1545060894-34b0b4c9c9c1?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder');"></div>
-              <div class="meta">
-                <h3 class="title">Retro Denim</h3>
-                <div class="price">₹999</div>
-                <div class="tag">Bottoms • Size M</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="wire-card">
-            <div class="wire-inner">
-              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder');"></div>
-              <div class="meta">
-                <h3 class="title">Vintage Dress</h3>
-                <div class="price">₹1,299</div>
-                <div class="tag">Dresses • One-of-a-kind</div>
-              </div>
-            </div>
-          </article>
-
-          <article class="wire-card">
-            <div class="wire-inner">
-              <div class="thumb" style="background-image:url('https://images.unsplash.com/photo-1519741491898-3d2d7dcd5c8b?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder');"></div>
-              <div class="meta">
-                <h3 class="title">Leather Satchel</h3>
-                <div class="price">₹1,799</div>
-                <div class="tag">Accessories • Pre-loved</div>
-              </div>
-            </div>
-          </article>
-
-        </div>
-      </div>
-
-      <aside style="padding:20px;border-radius:18px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);height:100%">
-        <h3 style="margin-top:0;font-size:20px">Why we love thrift</h3>
-        <p style="color:var(--muted)">Thoughtful, sustainable choices — each piece has a story. Small batch drops and careful quality checks mean you get style that lasts.</p>
-        <ul style="color:var(--muted)">
-          <li>Curated selection</li>
-          <li>Free local pickup</li>
-          <li>Easy returns (7 days)</li>
-        </ul>
-      </aside>
-    </section>
-
-  </main>
-
-  <footer>
-    © <span id="year"></span> Vintage Lane • Handpicked Finds • Made with care
-  </footer>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
+```
