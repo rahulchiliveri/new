@@ -1,0 +1,72 @@
+<!-- FILE: contact.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vintage Lane — Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#071025;--card:#07172b;--muted:#9fb0c8;--accent:#ffd166}
+    body{margin:0;font-family:Inter,system-ui;background:linear-gradient(180deg,var(--bg),#02101a);color:#eaf4ff}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:rgba(255,255,255,0.02)}
+    .container{max-width:900px;margin:36px auto;padding:0 20px}
+    .grid{display:grid;grid-template-columns:1fr 340px;gap:22px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:20px;border-radius:14px}
+    label{display:block;margin-bottom:8px;font-weight:600}
+    input,textarea{width:100%;padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit}
+    button{padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff8a8a);border:none;font-weight:700}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;gap:12px;align-items:center"><div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ff7b7b);display:flex;align-items:center;justify-content:center;font-weight:700;color:#071025">VL</div><strong>Vintage Lane</strong></div>
+    <nav>
+      <a href="index.html" style="color:var(--muted);margin-right:10px">Home</a>
+      <a href="products.html" style="color:var(--muted);margin-right:10px">Shop</a>
+      <a href="about.html" style="color:var(--muted);margin-right:10px">About</a>
+      <a href="contact.html" style="color:var(--muted)">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="grid">
+      <div class="card">
+        <h2 style="margin-top:0">Get in touch</h2>
+        <form id="contact-form">
+          <label for="name">Name</label>
+          <input id="name" required />
+
+          <label for="email">Email</label>
+          <input id="email" type="email" required />
+
+          <label for="msg">Message</label>
+          <textarea id="msg" rows="6" required></textarea>
+
+          <div style="margin-top:12px"><button type="submit">Send message</button></div>
+          <p id="status" style="color:var(--muted);font-size:13px;margin-top:10px"></p>
+        </form>
+      </div>
+
+      <aside class="card">
+        <h3 style="margin-top:0">Visit / Support</h3>
+        <p style="color:var(--muted)">Email: hello@vintagelane.example<br>Pickup: by appointment in Bangalore<br>Instagram: @vintage_lane</p>
+        <div style="margin-top:18px">
+          <strong>Opening Hours</strong>
+          <p style="color:var(--muted);margin:6px 0">Mon — Sat: 10:00 — 18:00<br>Sun: Closed</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer style="text-align:center;padding:28px;color:var(--muted)">© <span id="y4"></span> Vintage Lane</footer>
+  <script>
+    document.getElementById('y4').textContent = new Date().getFullYear();
+    document.getElementById('contact-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      document.getElementById('status').textContent = 'Thanks — message captured (demo).';
+      // replace with real submission logic when ready
+    });
+  </script>
+</body>
+</html>
