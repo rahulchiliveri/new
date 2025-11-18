@@ -1,61 +1,28 @@
+<!-- about.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Thrift Store | About</title>
+<title>About — Thrift Store</title>
 <style>
-    body {
-        margin: 0;
-        font-family: Poppins, sans-serif;
-        background: #101010;
-        color: #fff;
-    }
-    nav {
-        display: flex;
-        justify-content: space-between;
-        padding: 20px 40px;
-        background: rgba(255,255,255,0.05);
-        backdrop-filter: blur(10px);
-    }
-    nav a { color: #fff; margin-left: 20px; text-decoration: none; }
-
-    .about {
-        max-width: 900px;
-        margin: 80px auto;
-        background: rgba(255,255,255,0.05);
-        padding: 40px;
-        border-radius: 14px;
-        border: 2px dashed rgba(255,255,255,0.2);
-        backdrop-filter: blur(6px);
-    }
+  body { margin:0; font-family:Arial; background:linear-gradient(to bottom right,#111,#222); color:#fff; }
+  nav { display:flex; justify-content:center; gap:40px; padding:20px; background:rgba(255,255,255,0.05); backdrop-filter:blur(10px); }
+  nav a { color:#fff; text-decoration:none; font-weight:bold; }
+  nav a:hover { color:#f7c04a; }
+  .box { width:90%; max-width:900px; margin:40px auto; background:rgba(255,255,255,0.05); padding:30px; border-radius:16px; border:1px solid rgba(255,255,255,0.1); line-height:1.6; }
 </style>
 </head>
 <body>
-
 <nav>
-    <h2>Thrift Store</h2>
-    <div>
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </div>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Checkout</a>
 </nav>
-
-<section class="about">
-    <h2>Our Story</h2>
-    <p>
-        We believe in giving pre-loved fashion a second life. Our collection is curated 
-        from unique vintage finds, modern classics, and rare fashion pieces that deserve 
-        to be worn again.
-    </p>
-    <p>
-        Every item is chosen with care, ensuring quality, affordability, and style.
-        Thrifting is more than shopping — it's sustainable, expressive, and creative.
-    </p>
-</section>
-
+<div class="box">
+  <h2>Our Story</h2>
+  <p>We revive pre-loved fashion and make it accessible and affordable. Every piece is handpicked, cleaned, and quality checked.</p>
+</div>
 </body>
 </html>
-```
