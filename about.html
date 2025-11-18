@@ -1,0 +1,63 @@
+<!-- FILE: about.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vintage Lane — About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#071025;--muted:#9fb0c8;--accent:#ffd166}
+    body{margin:0;font-family:Inter,system-ui;background:linear-gradient(180deg,var(--bg),#02101a);color:#eaf4ff}
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 28px;background:rgba(255,255,255,0.02)}
+    .container{max-width:1000px;margin:36px auto;padding:0 20px}
+    .hero{display:flex;gap:28px;align-items:center}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:22px;border-radius:16px}
+    .story{color:var(--muted)}
+    .values{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .value{padding:12px;border-radius:12px;background:rgba(255,255,255,0.015);}
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;gap:12px;align-items:center"><div style="width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ff7b7b);display:flex;align-items:center;justify-content:center;font-weight:700;color:#071025">VL</div><strong>Vintage Lane</strong></div>
+    <nav>
+      <a href="index.html" style="color:var(--muted);margin-right:10px">Home</a>
+      <a href="products.html" style="color:var(--muted);margin-right:10px">Shop</a>
+      <a href="about.html" style="color:var(--muted);margin-right:10px">About</a>
+      <a href="contact.html" style="color:var(--muted)">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div style="flex:1" class="card">
+        <h1 style="margin-top:0;font-family:'Playfair Display',serif">Our Story</h1>
+        <p class="story">Vintage Lane started as a weekend market stall and grew into a carefully curated online shop. We rescue garments, repair where needed, and photograph each piece with love. Our goal is to make sustainable choices beautiful and accessible.</p>
+        <p class="story">We source locally and partner with artisans for restoration. Every purchase supports small-scale circular fashion and reduces textile waste.</p>
+      </div>
+
+      <aside style="width:340px" class="card">
+        <h3 style="margin-top:0">Quick Facts</h3>
+        <ul style="color:var(--muted)">
+          <li>1000+ items curated</li>
+          <li>Local drop-offs available</li>
+          <li>7-day returns</li>
+        </ul>
+      </aside>
+    </section>
+
+    <section style="margin-top:24px">
+      <h2 style="font-family:'Playfair Display',serif">Our Values</h2>
+      <div class="values">
+        <div class="value">Sustainability — mend & reuse</div>
+        <div class="value">Quality — carefully inspected</div>
+        <div class="value">Community — local partnerships</div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="text-align:center;padding:28px;color:var(--muted)">© <span id="y3"></span> Vintage Lane</footer>
+  <script>document.getElementById('y3').textContent=new Date().getFullYear();</script>
+</body>
+</html>
